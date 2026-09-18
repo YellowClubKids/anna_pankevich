@@ -1,70 +1,246 @@
 html,
 body {
-    padding:0;
-    margin:0;
-    height:100%;
+    padding: 0;
+    margin: 0;
+    height: 100%;
     background-image: url("img/background.png");
     background-color: #5E5151;
 }
+
+/* Первая секция: только выравнивание существующих элементов */
 .section-1 {
+    position: relative;
     overflow: hidden;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
+    height: 100vh;
+    min-height: 520px;
+    background-image: url("img/background.png");
+    background-color: #5E5151;
+    background-size: 900px auto;
+    background-position: left top;
+    background-repeat: repeat;
 }
+
+.hero-stage {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: min(100vw, 155.41vh);
+    aspect-ratio: 1063 / 684;
+    transform: translate(-50%, -50%);
+}
+
+.hero-stage>* {
+    position: absolute;
+    margin: 0;
+}
+
+.hero-stage img {
+    display: block;
+    height: auto;
+}
+
+.hero-text-name {
+    display: none;
+}
+
+.section-1 h1 {
+    left: 9.0%;
+    top: 20.6%;
+    z-index: 10;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: min(3.75vw, 5.82vh);
+    line-height: 1;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: #c6babb;
+    -webkit-text-stroke: 1px #332c2e;
+    text-shadow: 1px 2px 0 rgba(25, 20, 22, 0.55);
+}
+
+.img1 {
+    left: 73.45%;
+    top: 9.5%;
+    width: 21.0%;
+    z-index: 7;
+}
+
+.img2 {
+    left: 47.6%;
+    top: 13.0%;
+    width: 15.3%;
+    z-index: 6;
+}
+
+.img3 {
+    left: 2.5%;
+    top: 58.5%;
+    width: 66.5%;
+    opacity: 0.58;
+    transform: rotate(-5deg);
+    transform-origin: center;
+    z-index: 1;
+}
+
+.img4 {
+    left: 29.8%;
+    top: 80.7%;
+    width: 21.6%;
+    z-index: 8;
+}
+
+.img5 {
+    left: 63.0%;
+    top: 61.4%;
+    width: 25.5%;
+    z-index: 8;
+}
+
+.img6 {
+    left: 16.8%;
+    top: 27.4%;
+    width: 36.1%;
+    z-index: 8;
+}
+
+.img7 {
+    left: 17.5%;
+    top: 28.0%;
+    width: 36.1%;
+    z-index: 9;
+}
+
+.img8 {
+    left: 7.1%;
+    top: 7.5%;
+    width: 21.6%;
+    z-index: 2;
+}
+
+.img9 {
+    left: 51.0%;
+    top: 29.7%;
+    width: 18.5%;
+    z-index: 9;
+}
+
+.img10 {
+    left: 7.5%;
+    top: 50.4%;
+    width: 19.5%;
+    z-index: 7;
+}
+
+/* Вторая секция: работы полностью помещаются по высоте и листаются по горизонтали */
 .section-2 {
-    overflow: hidden;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-}
-.slider{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 620px;
+    padding: clamp(28px, 5vh, 52px) 4vw clamp(24px, 4vh, 42px);
     display: flex;
-    height: 100%;
-    overflow-x:auto;
+    flex-direction: column;
+    overflow: hidden;
+    box-sizing: border-box;
 }
-.slider-img{
-    height:50%;
-    margin-left:5%;
-}
-.works{
+
+.works {
+    margin: 0;
     font-family: "Amiri Quran", serif;
     font-weight: 400;
     font-style: normal;
     text-align: center;
-    font-size: 60px;
+    font-size: clamp(44px, 5vw, 68px);
+    line-height: 1;
+    flex: 0 0 auto;
 }
-.img1{
-    margin-left:1650px;
-    position:absolute;
+
+.works-line {
+    display: block;
+    width: min(86vw, 1150px);
+    max-height: 52px;
+    object-fit: fill;
+    margin: clamp(10px, 1.5vh, 18px) auto 0;
+    flex: 0 0 auto;
 }
-.img3{
-    margin-bottom:850px;
-    margin-left:780px;
-    position:absolute;
+
+.works-character {
+    display: block;
+    width: clamp(78px, 9vw, 120px);
+    height: auto;
+    margin: clamp(5px, 1vh, 10px) auto clamp(8px, 1.5vh, 16px);
+    flex: 0 0 auto;
 }
-.img2{
-    margin-bottom:800px;
-    margin-left:800px;
-    position:absolute;
-    z-index:2;
+
+.slider {
+    display: flex;
+    align-items: center;
+    gap: clamp(22px, 3vw, 48px);
+    width: 100%;
+    flex: 1 1 auto;
+    min-height: 0;
+    padding: 8px 4vw 18px;
+    box-sizing: border-box;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x proximity;
+    scrollbar-gutter: stable;
 }
-.img4{
-    margin-top:700px;
-    margin-right:500px;
-    position:absolute;
+
+.slider-img {
+    display: block;
+    flex: 0 0 auto;
+    width: auto;
+    height: clamp(230px, 48vh, 430px);
+    max-width: 72vw;
+    object-fit: contain;
+    scroll-snap-align: center;
 }
-.img5{
-    margin-left:1600px;
-    margin-top:600px;
-    position:absolute;
-}
-.img6 {
-    font-size: 80px;
-    margin-right:900px;
-    z-index:3;
-    position:absolute;
-}
-.img8 {
-    margin-top: 1000px;
+
+@media (max-width: 700px) {
+    .section-1 {
+        min-height: 430px;
+        height: 64.35vw;
+        max-height: 100vh;
+    }
+
+    .hero-stage {
+        width: 100vw;
+    }
+
+    .section-1 h1 {
+        font-size: 3.75vw;
+        -webkit-text-stroke-width: 0.5px;
+    }
+
+    .section-2 {
+        height: 100svh;
+        min-height: 560px;
+        padding: 26px 0 22px;
+    }
+
+    .works {
+        font-size: clamp(40px, 12vw, 58px);
+        padding: 0 18px;
+    }
+
+    .works-line {
+        width: 92vw;
+        max-height: 38px;
+        margin-top: 10px;
+    }
+
+    .works-character {
+        width: clamp(70px, 22vw, 105px);
+        margin: 5px auto 8px;
+    }
+
+    .slider {
+        gap: 18px;
+        padding: 8px 8vw 16px;
+    }
+
+    .slider-img {
+        height: clamp(220px, 48svh, 360px);
+        max-width: 84vw;
+    }
 }
